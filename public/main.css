@@ -1,0 +1,84 @@
+.active {
+	display: static;
+	border: 1px black solid;
+	border-radius: 3px;
+}
+.passive {
+	display: none;
+	border: 1px black solid;
+	border-radius: 3px;
+}
+.forms {
+	display: none;
+	border: 1px black solid;
+	border-radius: 3px;
+}
+#container {
+	border: 1px black solid;
+	border-radius: 3px;
+}
+#form { 
+    height: 90%;
+    margin: 5px;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+#leftcol {
+	float: left;
+	width: 100px;
+	height: 100%;	
+	border: 1px black solid;
+}
+#tab1 {
+    height: 33.3%;
+	background-color: grey;
+}
+#tab2 {
+	height: 33.3%;
+	background-color: blue;
+}
+#tab3 {	
+	height: 33.3%;
+	background-color: green;
+}
+#rightcol {
+	margin-left: 100px;
+	height: 100%;
+	border: 1px black solid;
+}
+#previewForm {
+	display: none;
+	border: 1px black solid;
+	border-radius: 5px;
+}
+#name {
+	display: static;
+}
+#contacts {
+	display: none;
+}
+#personal {
+	display: none;
+}
+#container {
+	display: static;
+}
+#previewform {
+	display: none;
+}
+#buttons {
+	display: none;
+}
+#save {
+	display: static;
+}
+#preview{
+	display: static;
+}
+#edit{
+	display: none;
+}
+#tableofpersons {
+	border: 1px black solid;
+	border-radius: 3px;
+}

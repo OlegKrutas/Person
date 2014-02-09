@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FirstApp</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+  
+        
+        <script  id='coltmp' type='text/template'>
+        <table>
+        </table>
+        <input type='button' id='add' value='Add' />
+        </script>
+        
+        <script id='modeltmp' type='text/template'>      
+        <td>{{= model.name }}</td>        
+        <td>{{= model.sex }}</td>   
+        <td><input type='button' id='remove' value='Remove' /></td>   
+        </div>		
+        </script>
+
+        <script type='text/template' id='edittemplate'>
+        <div id='container'>
+            <div id='form'>         
+                <div id='leftcol'>
+                    <div id='tab1'>
+                        Name
+                    </div>
+                    <div id='tab2'>
+                        Contacts
+                    </div>
+                    <div id='tab3'>
+                        Personal
+                    </div>
+                </div>
+                <div id='rightcol'>
+                    <div id='name'>
+                        First name<br>
+                        <input type='text' class='InfoFields' value='{{= model.name }}' /><br>
+                        Last name<br>
+                        <input type='text' class='InfoFields' value='{{= model.lastName }}' /><br>
+                    </div>
+                    <div id='contacts'>                        
+                        Skype<br> 
+                        <input type='text' class='InfoFields' value='{{= model.skype }}' /><br>
+                        Email<br>
+                        <input type='text' class='InfoFields' value='{{= model.email }}' /><br>
+                        Phone<br>
+                        <input type='text' class='InfoFields' value='{{= model.phone }}' /><br>
+                    </div>
+                    <div id='personal'>                        
+                        Sex<br> 
+                        <input type='text' class='InfoFields' value='{{= model.sex }}' /><br>
+                        Age<br>
+                        <input type='text' class='InfoFields' value='{{= model.age }}'/><br>
+                    </div>                                      
+                </div> 
+            </div> 
+            <div id = 'previewform'>                                              
+            </div>
+            <div>
+            <input type='button' id = 'preview' class='buttons' value='Preview' />
+            <input type='button' id = 'save' class='buttons' value='OK' />            
+            <input type='button' id = 'edit' class='buttons' value='Edit' />
+            </div>
+        </div>
+        </script> 
+
+        <script type='text/template' id='previewtemplate'>
+        <table>        
+        <tr><td>Name:</td>
+        <td>{{= model.name }}</td>
+        </tr>
+        <tr><td>Lastname:</td> 
+        <td>{{= model.lastName }}</td>
+        </tr>
+        <tr><td>Skype:</td> 
+        <td>{{= model.skype }}</td>
+        </tr>
+        <tr><td>Email:</td> 
+        <td>{{= model.email }}</td>
+        </tr>
+        <tr><td>Phone:</td> 
+        <td>{{= model.phone }}</td>
+        </tr>
+        <tr><td>Sex:</td> 
+        <td>{{= model.sex }}</td>
+        </tr>
+        <tr><td>Age:</td> 
+        <td>{{= model.age }}</td>
+        </tr>
+        </table>
+        </script>
+
+        <link rel='stylesheet' type='text/css' href='main.css'>             
+        <script type = 'text/javascript' src = 'libs/jquery.js'></script>
+        <script type='text/javascript'>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-Token': '<%= form_authenticity_token.to_s %>'
+            }
+        });
+        </script>
+        <script type = 'text/javascript' src = 'libs/underscore.js'></script>
+        <script type = 'text/javascript' src = 'libs/backbone.js'></script>
+        <script type = 'text/javascript' src = 'libs/backbone-mediator.js'></script>
+        <script type='text/javascript'>
+            _.templateSettings = {
+                evaluate: /\{\{(.+?)\}\}/g,
+                interpolate : /\{\{=(.+?)\}\}/g
+            };   
+        </script>    
+        <script type='text/javascript' src='person.js'></script>  
+        <script type='text/javascript' src='collection.js'></script> 
+        <script type='text/javascript' src='personview.js'></script>
+		<script type='text/javascript' src='editview.js'></script>		
+        <script type='text/javascript' src='collectionview.js'></script>     
+        
+                     
+        <script type='text/javascript' src='onload.js'></script>    
+        
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
