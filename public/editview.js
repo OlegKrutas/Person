@@ -65,10 +65,9 @@ var EditView = Backbone.View.extend({
         this.text.save();
     },
 
-    previewClick: function () {      
+    previewClick: function () {             
         this.savePersonInfo(this.text);
-        this.render(this.text);
-        //this.render();
+        this.render(this.text);        
         this.showPreviewForm();
     },
 
@@ -81,12 +80,8 @@ var EditView = Backbone.View.extend({
 		this.$el.html(this.edit_template({model: text.toJSON()}));
         this.$el.find('#previewform').html(this.preview_template({model: text.toJSON()}));        
 		return this;
-	},
-    
-	/*show: function () {
-	    this.$el.show();
-	},*/
-		
+	},   
+			
 	initialize: function () {		
         this.$el.show();          
 	}

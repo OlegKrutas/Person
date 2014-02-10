@@ -6,7 +6,7 @@ var CollectionView = Backbone.View.extend({
 	render: function () {	    	    		    
 		this.$el.html(this.collectiontemplate());					
 	    this.collection.each(this.renderModel, this);
-		this.collection.on('add', this.renderModel, this);				
+		//this.collection.on('add', this.renderModel, this);				
 	    return this;
 
     },  

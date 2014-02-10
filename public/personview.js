@@ -13,7 +13,8 @@ var PersonView = Backbone.View.extend({
 		'click #remove': 'removeModel'
 	},
 
-	loggingInfo: function (e) {	    		
+	loggingInfo: function (e) {	
+	    $('#editform').show();    		
 		event.preventDefault();					
 	    Backbone.Mediator.pub('channel1', this.model);	    	    	    
     },
